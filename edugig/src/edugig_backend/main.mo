@@ -2,7 +2,7 @@ import Trie "mo:base/Trie";
 import Principal "mo:base/Principal";
 import Context "mo:base/Context";
 
-actor class {
+actor class EduGig() {
     // --- DATA MODELS ---
 
     public type Role = {
