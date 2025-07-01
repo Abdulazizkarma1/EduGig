@@ -2,7 +2,7 @@ import Trie "mo:base/Trie";
 import Principal "mo:base/Principal";
 import Context "mo:base/Context";
 
-actor {
+actor class {
     // --- DATA MODELS ---
 
     public type Role = {
