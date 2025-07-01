@@ -77,6 +77,7 @@ actor class EduGig() {
             name = name;
             badges = [];
         };
-        users := Trie.put(users, caller, userProfile);
+        let (newUsers, _) = Trie.put(users, caller, userProfile);
+        users := newUsers;
     };
 }
