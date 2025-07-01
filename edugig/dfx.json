@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "edugig_backend": {
+      "main": "src/edugig_backend/main.mo",
+      "type": "motoko"
+    },
+    "edugig_frontend": {
+      "dependencies": [
+        "edugig_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/edugig_frontend/src/index.html"
+      },
+      "source": [
+        "src/edugig_frontend/assets",
+        "dist/edugig_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
