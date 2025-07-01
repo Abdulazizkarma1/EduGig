@@ -56,13 +56,13 @@ actor class EduGig() {
         taskContentHash: Text;
     };
 
-    // --- STABLE STORAGE ---
+    // --- IN-MEMORY STORAGE ---
 
-    stable var users = Trie.empty<Principal, UserProfile>();
-    stable var lessons = Trie.empty<Nat, Lesson>();
-    stable var tasks = Trie.empty<Nat, Task>();
-    stable var submissions = Trie.empty<Nat, Submission>();
-    stable var sbts = Trie.empty<Nat, SBT>();
+    var users = Trie.empty<Principal, UserProfile>();
+    var lessons = Trie.empty<Nat, Lesson>();
+    var tasks = Trie.empty<Nat, Task>();
+    var submissions = Trie.empty<Nat, Submission>();
+    var sbts = Trie.empty<Nat, SBT>();
 
     // --- USER MANAGEMENT ---
 
