@@ -66,11 +66,11 @@ actor EduGig {
 
     // --- USER MANAGEMENT ---
 
-    public query func getUser(id: Principal) : async ?UserProfile {
+    public func getUser(id: Principal) : query async ?UserProfile {
         return Trie.get(users, id);
     };
 
-    public update func createUser(role: Role, name: Text) : async () {
+    public func createUser(role: Role, name: Text) : update async () {
         let caller = Context.caller();
         let userProfile: UserProfile = {
             role = role;
