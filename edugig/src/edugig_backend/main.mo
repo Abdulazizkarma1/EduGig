@@ -2,7 +2,7 @@ import Trie "mo:base/Trie";
 import Principal "mo:base/Principal";
 import Context "mo:base/Context";
 
-actor class EduGig() {
+actor {
     // --- DATA MODELS ---
 
     public type Role = {
@@ -37,7 +37,7 @@ actor class EduGig() {
         return Trie.get(users, id);
     };
 
-    public update func createUser(role: Role, name: Text) : async () {
+    public func createUser(role: Role, name: Text) : async () {
         let caller = Context.caller();
         let userProfile: UserProfile = {
             role = role;
