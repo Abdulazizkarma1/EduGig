@@ -1,19 +1,23 @@
-import { edugig_backend } from "../../declarations/edugig_backend";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import '../assets/main.css';
 
-document.querySelector("form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const button = e.target.querySelector("button");
+const App = () => (
+  <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+    <h1 className="text-5xl font-extrabold text-center text-gray-800">
+      Welcome to EduGig
+    </h1>
+    <p className="mt-4 text-lg text-gray-600">
+      Your journey to master tech skills begins here.
+    </p>
+  </div>
+);
 
-  const name = document.getElementById("name").value.toString();
 
-  button.setAttribute("disabled", true);
-
-  // Interact with foo actor, calling the greet method
-  const greeting = await edugig_backend.greet(name);
-
-  button.removeAttribute("disabled");
-
-  document.getElementById("greeting").innerText = greeting;
-
-  return false;
-});
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
