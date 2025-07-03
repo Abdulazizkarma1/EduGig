@@ -98,13 +98,13 @@ actor {
     // --- MODULE MANAGEMENT ---
 
     public func addModule(title: Text, content: Text, quiz: [Question]) : async () {
-        let module: Module = {
+        let learningModule: Module = {
             id = nextModuleId;
             title = title;
             content = content;
             quiz = quiz;
         };
-        modules := Trie.put(modules, nextModuleId, module);
+        modules := Trie.put(modules, nextModuleId, learningModule);
         nextModuleId += 1;
     };
 
@@ -114,8 +114,8 @@ actor {
 
     public query func listModules() : async [Module] {
         var allModules: [Module] = [];
-        for ((_, module) in modules.entries()) {
-            allModules := Array.append(allModules, [module]);
+        for ((_, learningModule) in modules.entries()) {
+            allModules := Array.append(allModules, [learningModule]);
         };
         return allModules;
     };
